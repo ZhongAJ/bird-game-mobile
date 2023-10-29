@@ -1,0 +1,88 @@
+[gd_scene load_steps=19 format=3 uid="uid://cp3axyhdwbav1"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_60bww"]
+[ext_resource type="Texture2D" uid="uid://dww3fct0c7iqa" path="res://images/bg.png" id="2_4al4c"]
+[ext_resource type="Texture2D" uid="uid://cqltbdmr3jkur" path="res://images/0.png" id="2_7k7ng"]
+[ext_resource type="Texture2D" uid="uid://b8lyeufkvd1ch" path="res://images/1.png" id="3_01l2j"]
+[ext_resource type="Texture2D" uid="uid://djwc1ehmvy540" path="res://images/2.png" id="4_g047v"]
+[ext_resource type="Texture2D" uid="uid://cewuio7mmr5wx" path="res://images/3.png" id="5_brm55"]
+[ext_resource type="Texture2D" uid="uid://bb753hm3aruqc" path="res://images/4.png" id="6_q2wta"]
+[ext_resource type="Texture2D" uid="uid://dgk0uauw3aej2" path="res://images/5.png" id="7_jparr"]
+[ext_resource type="Texture2D" uid="uid://cghevgr6syqck" path="res://images/6.png" id="8_2y7nu"]
+[ext_resource type="Texture2D" uid="uid://bb26uhw2vxpfs" path="res://images/7.png" id="9_h2pv4"]
+[ext_resource type="Texture2D" uid="uid://q5d8u6068jfc" path="res://images/start.png" id="11_1paak"]
+[ext_resource type="Script" path="res://AnimatedBird2D.gd" id="11_naj8t"]
+[ext_resource type="Texture2D" uid="uid://hm4t3epf24dj" path="res://images/ground.png" id="12_tubed"]
+[ext_resource type="Texture2D" uid="uid://dfrpm5jcinfyr" path="res://images/column.png" id="13_e7qe5"]
+[ext_resource type="Script" path="res://Column1.gd" id="15_j3ap1"]
+[ext_resource type="Texture2D" uid="uid://d30aek25nxbrn" path="res://images/gameover.png" id="15_mpt0i"]
+[ext_resource type="Script" path="res://Column2.gd" id="17_65gy3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4shj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7k7ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_01l2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g047v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_brm55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q2wta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jparr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2y7nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h2pv4")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 8.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_60bww")
+metadata/_edit_vertical_guides_ = []
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(214, 322)
+texture = ExtResource("2_4al4c")
+
+[node name="AnimatedBird2D" type="AnimatedSprite2D" parent="Bg"]
+position = Vector2(-77, -19)
+sprite_frames = SubResource("SpriteFrames_i4shj")
+animation = &"fly"
+frame_progress = 0.309093
+script = ExtResource("11_naj8t")
+
+[node name="Start" type="Sprite2D" parent="."]
+position = Vector2(217, 323)
+texture = ExtResource("11_1paak")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(398, 571)
+texture = ExtResource("12_tubed")
+
+[node name="Gameover" type="Sprite2D" parent="."]
+position = Vector2(217, 323)
+texture = ExtResource("15_mpt0i")
+
+[node name="Column1" type="Sprite2D" parent="."]
+position = Vector2(468, 320)
+texture = ExtResource("13_e7qe5")
+script = ExtResource("15_j3ap1")
+
+[node name="Column2" type="Sprite2D" parent="."]
+position = Vector2(703, 320)
+texture = ExtResource("13_e7qe5")
+script = ExtResource("17_65gy3")
