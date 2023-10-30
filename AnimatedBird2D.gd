@@ -37,7 +37,7 @@ func _process(delta):
 	if current_scene.game_over_flag:
 		return
 	if hit_bottom() and !column1.hit(self) and !column2.hit(self):
-		fly()
+		fly(delta)
 		return
 	stop()
 	current_scene.game_over()
@@ -52,13 +52,15 @@ func init():
 	v = v0
 	play("fly")
 
-func fly():
+func fly(delta):
 	# 垂直的运动距离
 	s = v * t - g * t * t / 2
 #	print(s)
 	# 实时速度，这是物理公式，实时速度等于初始速度-加速度*时间
 	v -= g * t
 #	print(v)
+	if s > 0:
+		s = delta * (s * 60)
 	position.y -= s
 	dip = atan(s / 192)
 #	print(rotation)

@@ -7,6 +7,7 @@ var ground_x
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+#	Engine.max_fps = 30
 	$Gameover.hide()
 	$Ground.move_to_front()
 	$Gameover.move_to_front()
@@ -16,7 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Ground.move_local_x(-2, false)
+	$Ground.move_local_x(-delta * (60 * 2), false)
 	if $Ground.position.x <= 40:
 		$Ground.position.x = ground_x
 

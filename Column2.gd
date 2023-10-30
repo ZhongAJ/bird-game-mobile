@@ -20,7 +20,7 @@ func _process(delta):
 	if current_scene.game_over_flag:
 		return
 	if position.x + 39 >= 0:
-		move_local_x(-1, false)
+		move_local_x(-delta * (60), false)
 	else:
 		position.x = 2 * distance - 39
 		position.y = min + randi() % (max - min + 1)
