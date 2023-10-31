@@ -59,7 +59,7 @@ func fly(delta):
 	# 实时速度，这是物理公式，实时速度等于初始速度-加速度*时间
 	v -= g * t
 #	print(v)
-	if s > 0:
+	if s < 0:
 		s = delta * (s * 60)
 	position.y -= s
 	dip = atan(s / 192)
