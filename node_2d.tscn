@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cp3axyhdwbav1"]
+[gd_scene load_steps=22 format=3 uid="uid://cp3axyhdwbav1"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_60bww"]
 [ext_resource type="Texture2D" uid="uid://dww3fct0c7iqa" path="res://images/bg.png" id="2_4al4c"]
@@ -17,6 +17,9 @@
 [ext_resource type="Script" path="res://Column1.gd" id="15_j3ap1"]
 [ext_resource type="Texture2D" uid="uid://d30aek25nxbrn" path="res://images/gameover.png" id="15_mpt0i"]
 [ext_resource type="Script" path="res://Column2.gd" id="17_65gy3"]
+[ext_resource type="Texture2D" uid="uid://ba3q7x8xyv72v" path="res://images/money.png" id="18_rgh14"]
+[ext_resource type="Script" path="res://Money1.gd" id="19_vbs1m"]
+[ext_resource type="Script" path="res://Money2.gd" id="20_cc1be"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i4shj"]
 animations = [{
@@ -86,3 +89,13 @@ script = ExtResource("15_j3ap1")
 position = Vector2(703, 320)
 texture = ExtResource("13_e7qe5")
 script = ExtResource("17_65gy3")
+
+[node name="Money1" type="Sprite2D" parent="."]
+position = Vector2(585, 320)
+texture = ExtResource("18_rgh14")
+script = ExtResource("19_vbs1m")
+
+[node name="Money2" type="Sprite2D" parent="."]
+position = Vector2(830, 320)
+texture = ExtResource("18_rgh14")
+script = ExtResource("20_cc1be")

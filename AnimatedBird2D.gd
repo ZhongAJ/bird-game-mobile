@@ -23,12 +23,12 @@ func _ready():
 	init()
 	current_scene = get_tree().get_current_scene()
 	column1 = get_node("../../Column1")
-	print(column1)
+#	print(column1)
 	column2 = get_node("../../Column2")
-	print(column2)
-	print(current_scene.game_over)
-	print(position.x)
-	print(position.y)
+#	print(column2)
+#	print(current_scene.game_over)
+#	print(position.x)
+#	print(position.y)
 	pass # Replace with function body.
 
 

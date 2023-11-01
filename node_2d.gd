@@ -8,6 +8,7 @@ var ground_x
 # Called when the node enters the scene tree for the first time.
 func _ready():
 #	Engine.max_fps = 30
+	$Bg/AnimatedBird2D.play("fly")
 	$Gameover.hide()
 	$Ground.move_to_front()
 	$Gameover.move_to_front()
@@ -35,6 +36,8 @@ func _input(event):
 			$Bg/AnimatedBird2D.init()
 			$Column1.init()
 			$Column2.init()
+			$Money1.init()
+			$Money2.init()
 		else:
 			$Bg/AnimatedBird2D.step()
 

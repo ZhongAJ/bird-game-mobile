@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var distance = 245
+var distance = 235
 
 var gap = 144
 
@@ -22,7 +22,7 @@ func _process(delta):
 	if position.x + 39 >= 0:
 		move_local_x(-delta * (60), false)
 	else:
-		position.x = 2 * distance - 39
+		position.x = 2 * distance
 		position.y = min + randi() % (max - min + 1)
 
 func hit(bird : AnimatedSprite2D) -> bool:
