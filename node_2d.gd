@@ -2,6 +2,7 @@ extends Node2D
 
 static var game_over_flag:bool = true
 static var ready_flag:bool = true
+static var score = 0
 
 var ground_x
 
@@ -18,6 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+#	print(score)
+	$RichTextLabel.text = "分数：" + str(score)
 	$Ground.move_local_x(-delta * (60 * 2), false)
 	if $Ground.position.x <= 40:
 		$Ground.position.x = ground_x
@@ -33,6 +36,7 @@ func _input(event):
 				ready_flag = true
 				$Start.show()
 				$Gameover.hide()
+			score = 0
 			$Bg/AnimatedBird2D.init()
 			$Column1.init()
 			$Column2.init()

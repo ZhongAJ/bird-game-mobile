@@ -38,6 +38,8 @@ func _process(delta):
 		return
 	if hit_bottom() and !column1.hit(self) and !column2.hit(self):
 		fly(delta)
+		if column1.get_score(self) or column2.get_score(self):
+			current_scene.score += 1
 		return
 	stop()
 	current_scene.game_over()

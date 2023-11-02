@@ -8,6 +8,7 @@ var max
 var min
 
 var current_scene
+var through = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,3 +45,17 @@ func init():
 	max = 420 - gap / 2
 	min = 80 + gap / 2
 	position.y = min + randi() % (max - min + 1)
+
+func get_score(bird : AnimatedSprite2D) -> bool:
+	if bird.global_position.x >= position.x + 39:
+		if !through:
+			if bird.global_position.y > position.y - (gap / 2) + 24 and bird.global_position.y < position.y + (gap / 2) - 24:
+				through = true
+				return true
+			else:
+				return false
+		else:
+			return false
+	else:
+		through = false
+	return false

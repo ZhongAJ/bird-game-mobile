@@ -5,7 +5,7 @@ var distance = 117
 var _offset = 50
 var column
 var bird
-var first = true
+var hit_bird = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,9 +23,7 @@ func _process(delta):
 	if position.x + 22 >= 0:
 		if hit():
 			hide()
-#			print('没撞到')
 		else:
-#			print('撞到了')
 			show()
 		move_local_x(-delta * (60), false)
 	else:
@@ -39,16 +37,17 @@ func hit() -> bool:
 	var y2 = position.y + 22 + 24
 	if bird.global_position.x >= x1:
 #		print(str(bird.global_position.x) + " " + str(bird.global_position.y) + "     " + str(position.x) + " " + str(position.y))
-		if first:
+		if !hit_bird:
 			if bird.global_position.y >= y1 and bird.global_position.y <= y2:
-				first = false
+				hit_bird = true
+				current_scene.score += 1
 				return true
 			else:
 				return false
 		else:
 			return true
 	else:
-		first = true
+		hit_bird = false
 	return false
 
 func init():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cp3axyhdwbav1"]
+[gd_scene load_steps=23 format=3 uid="uid://cp3axyhdwbav1"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_60bww"]
 [ext_resource type="Texture2D" uid="uid://dww3fct0c7iqa" path="res://images/bg.png" id="2_4al4c"]
@@ -53,6 +53,8 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="SystemFont" id="SystemFont_kdab8"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_60bww")
 metadata/_edit_vertical_guides_ = []
@@ -99,3 +101,14 @@ script = ExtResource("19_vbs1m")
 position = Vector2(830, 320)
 texture = ExtResource("18_rgh14")
 script = ExtResource("20_cc1be")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 19.0
+offset_top = 18.0
+offset_right = 119.0
+offset_bottom = 58.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_kdab8")
+theme_override_font_sizes/normal_font_size = 20
+text = "分数：0"
+scroll_active = false
